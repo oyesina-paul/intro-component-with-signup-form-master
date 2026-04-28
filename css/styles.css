@@ -1,0 +1,259 @@
+:root {
+    --clr-primary-200:  hsl(0, 100%, 74%) ;
+    --clr-primary-400: hsl(154, 59%, 51%);
+
+     --clr-primary-400-deep: hsl(154, 51%, 44%);
+
+    --clr-accent-400: hsl(248, 32%, 49%);
+
+    --clr-neutral-200-transparent: hsl(246, 25%, 95%);
+
+    --clr-neutral-200: hsl(246, 25%, 77%);
+    --clr-neutral-400: hsl(249, 10%, 26%) ;
+
+    --fs-primary:1rem;
+
+    --ff-primary: "Poppins", sans-serif;
+
+    --fw-regular: 400;
+    --fw-bold: 500;
+    --fw-dark: 600;
+    --fw-black:700;
+}
+
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+    box-sizing:border-box;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  line-height: 1;
+  text-wrap: balance;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Uility classes */
+.flow-content > * + * {
+  margin-top:  var(--flow-spacer, 1em);
+}  /* Selects every direct child of my flow except the first one */
+
+
+body {
+    background: url(../images/bg-intro-mobile.png) no-repeat;
+    background-color: var(--clr-primary-200);
+    font-size: var(--fs-primary);
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-regular);
+    margin: 1rem;
+}
+
+@media(min-width:40rem) {
+    body {
+        background: url(../images/bg-intro-desktop.png);
+        background-color: var(--clr-primary-200);
+    }
+
+    .container {
+        display: flex;
+        padding: 7rem;
+    }
+}
+
+.hero-content {
+    --flow-spacer: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+@media(min-width:40rem) {
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+    }
+}
+
+.hero-content h1 {
+    margin-top: 3rem;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.hero-content p{
+    color: var(--clr-neutral-200-transparent);
+    font-size: 0.8rem;
+    font-weight: var(--fw-bold);
+}
+
+@media(min-width:40rem) {
+    .hero-content h1 {
+        font-size: 3rem;
+        margin-top: 0;
+    }
+
+    .hero-content p {
+        max-width: 80%;
+        line-height: 1.5rem;
+    }
+}
+
+.offer {
+    background-color: var(--clr-accent-400);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1rem 0.7rem -0.8rem var(--clr-neutral-400);
+}
+
+.offer h3 {
+    font-weight: var(--fw-regular);
+    color: var(--clr-neutral-200-transparent);
+}
+
+.offer h3 span {
+    font-weight: var(--fw-dark);
+    color: #fff;
+}
+
+@media(min-width:40rem) {
+    .offer {
+        margin-top: 0;
+        padding: 1rem 1rem;
+    }
+}
+
+.form-content {
+    background-color: #fff;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1rem 0.7rem -0.8rem var(--clr-neutral-400);
+}
+
+form p {
+    color: var(--clr-neutral-200);
+    font-size: 0.5rem;
+    text-align: center;
+}
+
+form p span {
+    color: var(--clr-primary-200);
+    font-weight: var(--fw-dark);
+}
+
+@media(min-width:40rem)  {
+    form {
+        padding: 2rem;
+    }
+}
+
+.wrapper input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 0.2px solid var(--clr-neutral-200);
+    border-radius: 0.3rem;
+}
+
+.wrapper input::placeholder {
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-400);
+    font-size: 0.8rem;
+}
+
+@media(min-width:40rem) {
+    .offer-form {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 70%;
+        justify-content: center;
+    }
+}
+
+.btn {
+    background-color: var(--clr-primary-400-deep);
+    border: none;
+    border-radius: 0.3rem;
+    padding: 1rem 1.5rem;;
+    color: #fff;
+    text-align: center;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.05rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--clr-primary-400);
+}
+
+.errorMessage {
+    color: var(--clr-primary-200);
+    font-size: 0.5rem;
+    text-align: right;
+    display: none;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.wrapper label img {
+    position: absolute;
+    right: 1.2rem;
+    top: 0.7rem;
+    max-width: 7%;
+    display: none;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
